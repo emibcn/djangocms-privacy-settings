@@ -1,0 +1,6 @@
+{
+    "package-name": "djangocms-privacy-settings",
+    "installed-apps": [
+        "djangocms_privacy_settings"
+    ]
+}
