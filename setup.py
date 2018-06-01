@@ -1,6 +1,6 @@
 import os
 from setuptools import setup, find_packages
-
+from djangocms_privacy_settings import __version__
 
 def read(fname):
     # read the contents of a text file
@@ -11,7 +11,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='djangocms-privacy-settings',
-    version='1.0.4',
+    version=__version__,
     packages=find_packages(),
     include_package_data=True,
     license='GNU General Public License',
