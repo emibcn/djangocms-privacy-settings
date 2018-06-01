@@ -17,7 +17,7 @@ setup(
     license='GNU General Public License',
     description='RGPD LAW SETTINGS',
     long_description=read('README.md'),
-    url='https://github.com/Pyc0kw4k/djangocms-reservit',
+    url='https://github.com/Pyc0kw4k/djangocms-privacy-settings.git',
     author='Lozano Joaquim',
     author_email='joaquimlozano@gmail.com',
 )
