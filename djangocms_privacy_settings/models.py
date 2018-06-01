@@ -34,9 +34,8 @@ class PrivacyPolicySetting(CMSPlugin):
         categories = PrivacyPolicyCategory.objects.filter(privacy_settings=self)
         data = {}
         data['levels'] = []
-        index = 0
+
         for cat in categories:
-            index+=1
             data['levels'].append({
                 'id': str(cat.slug),
                 'title': cat.get_category_display(),
