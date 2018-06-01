@@ -20,7 +20,7 @@ class PrivacyPolicyPlugin(CMSPluginBase):
         context.update({
             'instance': instance,
             'categories': instance.get_categories_json(),
-            'google_ua': settings.google_ua
+            'google_ua': settings.GOOGLE_UA
         })
         return context
 

@@ -11,13 +11,13 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='djangocms-privacy-settings',
-    version='1.0',
+    version='1.0.4',
     packages=find_packages(),
     include_package_data=True,
     license='GNU General Public License',
     description='RGPD LAW SETTINGS',
     long_description=read('README.md'),
-    url='https://github.com/Pyc0kw4k/djangocms-privacy-settings.git',
+    url='https://github.com/Pyc0kw4k/djangocms-privacy-settings',
     author='Lozano Joaquim',
     author_email='joaquimlozano@gmail.com',
 )
