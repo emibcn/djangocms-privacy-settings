@@ -28,7 +28,7 @@ class PrivacyPolicyCategoryAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
         }),
     ]
 
-admin.site.register(PrivacyPolicySetting, PrivacyPolicyAdmin)
-admin.site.register(PrivacyPolicyCategory, PrivacyPolicyCategoryAdmin)
+#admin.site.register(PrivacyPolicySetting, PrivacyPolicyAdmin)
+#admin.site.register(PrivacyPolicyCategory, PrivacyPolicyCategoryAdmin)
 
 

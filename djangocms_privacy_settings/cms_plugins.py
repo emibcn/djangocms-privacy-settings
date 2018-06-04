@@ -7,8 +7,6 @@ from cms.plugin_pool import plugin_pool
 from .models import PrivacyPolicySetting
 from .admin import PrivacyPolicyCategoryInline
 
-from django.template.defaultfilters import slugify
-
 class PrivacyPolicyPlugin(CMSPluginBase):
     model = PrivacyPolicySetting
     name = _("Privacy policy")

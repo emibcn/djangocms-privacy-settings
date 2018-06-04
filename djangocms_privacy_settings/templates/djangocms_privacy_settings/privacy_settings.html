@@ -1,5 +1,7 @@
 {% load sekizai_tags static %}
-
+{% addtoblock 'css' %}
+<link rel="stylesheet" href="{% static 'djangocms_privacy_settings/css/privacy_settings.css' %}">
+{% endaddtoblock %}
 <div id="edit-cookieconsent-settings"></div>
 
 {% addtoblock 'js' %}
