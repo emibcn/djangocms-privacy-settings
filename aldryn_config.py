@@ -8,9 +8,5 @@ class Form(forms.BaseForm):
 
 
     def to_settings(self, data, settings):
-        settings['GOOGLE_UA'] = data.get('google_ua', '')
-        try:
-            settings['GOOGLE_UA'] = data.get('google_ua')
-        except (ValueError, TypeError):
-            pass
+        settings['GOOGLE_UA'] = data['google_ua']
         return settings
