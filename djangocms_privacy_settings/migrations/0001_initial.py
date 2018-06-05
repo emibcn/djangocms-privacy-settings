@@ -10,10 +10,6 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-        ('cms', '0020_old_tree_cleanup'),
-    ]
-
     operations = [
         migrations.CreateModel(
             name='PrivacyPolicyCategory',
