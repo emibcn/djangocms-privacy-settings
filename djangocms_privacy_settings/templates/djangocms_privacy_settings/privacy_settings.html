@@ -5,48 +5,52 @@
 <div id="edit-cookieconsent-settings"></div>
 
 {% addtoblock 'js' %}
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-    <script>
-        window.addEventListener("load", function(){
-            window.cookieconsent.initialise({
-                "palette": {
-                    "popup": {
-                        "background": "#000"
-                    },
-                    "button": {
-                        "background": "#f1d600"
-                    }
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+    window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#000"
                 },
-                "content": {
-                    "href": '{{ instance.terms_policies_url|safe }}',
-                    "message": "{{ instance.popup_intro|safe }}",
-                    "dismiss": "Accepter",
-                    "link": "Plus en detail",
+                "button": {
+                    "background": "#f1d600"
                 }
-            })});
-    </script>
+            },
+            "content": {
+                "href": '{{ instance.terms_policies_url|safe }}',
+                "message": "{{ instance.popup_intro|safe }}",
+                "dismiss": "Accepter",
+                "link": "Plus en detail",
+            }
+        })});
+</script>
 
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="{% static 'djangocms_privacy_settings/js/cookie-consent-custom.js' %}"></script>
-    <script type="text/javascript">
-        $(function(){
-            var cookieconsent = $.cookieconsent({
-                autorun: true,
-                default_level_id: '{{ instance.get_first_cat_id }}',
-                cookie_notice_autohide_timeout:0,
-                edit_settings_element: $('#edit-cookieconsent-settings'),
-                levels: {{ categories|safe }},
-                cookie_notice:"{{ instance.cookie_notice|safe }}",
-                cookie_policy_url: '{{ instance.terms_policies_url|safe }}',
-                edit_settings_intro: '{{ instance.popup_intro|safe }}',
-                jqueryui_theme_css: 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/excite-bike/jquery-ui.css',
-            });
-        });
-    </script>
+<!--<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+{% if request.LANGUAGE_CODE=='fr' %}
+<script type="text/javascript" src="{% static 'djangocms_privacy_settings/js/fr/cookie-consent-custom.js' %}"></script>
+{% else %}
+<script type="text/javascript" src="{% static 'djangocms_privacy_settings/js/en/cookie-consent-custom.js' %}"></script>
+{% endif %}
+<script type="text/javascript">
+    $(function(){
+        var cookieconsent = $.cookieconsent({
+            autorun: true,
+            default_level_id: '{{ instance.get_first_cat_id }}',
+            cookie_notice_autohide_timeout:0,
+            edit_settings_element: $('#edit-cookieconsent-settings'),
+            levels: {{ categories|safe }},
+        cookie_notice:"{{ instance.cookie_notice|safe }}",
+            cookie_policy_url: '{{ instance.terms_policies_url|safe }}',
+            edit_settings_intro: '{{ instance.popup_intro|safe }}',
+            jqueryui_theme_css: 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/excite-bike/jquery-ui.css',
+    });
+    });
+</script>
 
 
-    <script type="text/plain" cookieconsent-level="statistics">
+<script type="text/plain" cookieconsent-level="statistics">
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

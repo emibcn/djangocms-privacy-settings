@@ -199,7 +199,7 @@ $.extend({
 		// edit settings dialog
 		var overlay = $('<div class="ui-widget-overlay cookieconsent-overlay" />');
 		var settings_dialog = $(
-			'<div class="ui-widget ui-widget-content ui-corner-all cookieconsent-dialog-content cookieconsent-edit-settings">' +
+			'<div class="ui-widget ui-corner-all cookieconsent-dialog-content cookieconsent-edit-settings">' +
 				(typeof(config.edit_settings_intro) == 'string' ? config.edit_settings_intro : config.edit_settings_intro.html()) +
 				'<div class="cookieconsent-magic-button-wrap cookieconsent-magic-button-related">' +
 					'<div class="ui-state-highlight ui-corner-all">' +
@@ -207,14 +207,14 @@ $.extend({
 					'</div>' +
 				'</div>' +
 				'<div class="cookieconsent-level-changer-wrap">' +
-					'<p style="text-align:center; clear:both; padding:5px 10px;" class="ui-state-highlight">Use the buttons below to see the different types of cookies you can choose to allow.</p>' +
+					'<p style="text-align:center; clear:both; padding:5px 10px;" class="ui-state-highlight">Utilisez les boutons ci-dessous pour voir les différents types de cookies que vous pouvez choisir.</p>' +
 					'<div class="cookieconsent-level-changer" />' +
 					'<div class="cookieconsent-permission-panels">' +
-						'<div class="ui-corner-all cookieconsent-permission-panel-disallowed"><div class="ui-corner-top ui-widget-header cookieconsent-permission-panel-title">This website cannot :</div><ul class="ui-widget ui-widget-content ui-corner-bottom" /></div>' +
-						'<div class="ui-corner-all cookieconsent-permission-panel-allowed"><div class="ui-corner-top ui-widget-header cookieconsent-permission-panel-title">This website is allowed to:</div><ul class="ui-widget ui-widget-content ui-corner-bottom" /></div>' +
+						'<div class="ui-corner-all cookieconsent-permission-panel-disallowed"><div class="ui-corner-top ui-widget-header cookieconsent-permission-panel-title red"><i class="fa fa-thumbs-down" aria-hidden="true"></i> Cookies desactivés :</div><ul class="ui-widget ui-widget-content ui-corner-bottom" /></div>' +
+						'<div class="ui-corner-all cookieconsent-permission-panel-allowed"><div class="ui-corner-top ui-widget-header cookieconsent-permission-panel-title green"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Cookies activés :</div><ul class="ui-widget ui-widget-content ui-corner-bottom" /></div>' +
 					'</div>' +
 				'</div>' +
-				(config.cookie_policy_url.length > 0?'<a href="'+config.cookie_policy_url+'" class="cookieconsent-cookie-policy-link" target="_blank">En savoir plus</a>':'') +
+				(config.cookie_policy_url.length > 0?'<a href="'+config.cookie_policy_url+'" class="cookieconsent-cookie-policy-link btn-primary text-center">En savoir plus</a>':'') +
 			'</div>'
 		);
 		var close_settings_dialog = make_button('Close', 'ui-icon-closethick').addClass('cookieconsent-dialog-close');
@@ -261,10 +261,10 @@ $.extend({
 		if(config.edit_settings_element != null){
 			switch(config.edit_settings_element[0].nodeName.toLowerCase()){
 				case 'input':
-					if(trim(config.edit_settings_element.val()).length == 0){ config.edit_settings_element.val('Change your cookie settings'); }
+					if(trim(config.edit_settings_element.val()).length == 0){ config.edit_settings_element.val('Modifier les paramètres de vos cookies'); }
 					break;
 				default:
-					if(trim(config.edit_settings_element.html()).length == 0){ config.edit_settings_element.html('Change your cookie settings'); }
+					if(trim(config.edit_settings_element.html()).length == 0){ config.edit_settings_element.html('Modifier les paramètres de vos cookies'); }
 			}
 			config.edit_settings_element.click(function(){ edit_settings(); return false; });
 		}
@@ -281,7 +281,7 @@ $.extend({
 
 		// ui elements
 		function make_button(text, icon_class){
-			var button = $('<button class="ui-button ui-widget ui-state-default ui-corner-all">'+(icon_class?'<span class="ui-icon '+icon_class+' ui-button-icon-primary" />':'')+'<span class="ui-button-text">'+text+'</span></button>');
+			var button = $('<button class="btn ui-corner-all">'+(icon_class?'<span class="close" />':'')+'</button>');
 			if(icon_class){
 				button.addClass('ui-button-text-icon-primary');
 			}else{
@@ -347,10 +347,10 @@ $.extend({
 				// popup message if they haven't yet seen the cookie notice
 				if(config._demo_mode || config.levels.saved() == null){
 					var popup = $(
-						'<div class="ui-widget ui-widget-content ui-corner-top cookieconsent-popup">' +
+						'<div class="ui-widget ui-corner-top cookieconsent-popup">' +
 							(typeof(config.cookie_notice) == 'string' ? config.cookie_notice : config.cookie_notice.html()) +
 							'<div class="cookieconsent-button-wrap" />' +
-							(config.cookie_policy_url.length > 0?'<a href="'+config.cookie_policy_url+'" class="cookieconsent-cookie-policy-link" target="_blank">En savoir plus </a>':'') +
+							(config.cookie_policy_url.length > 0?'<a href="'+config.cookie_policy_url+'" class="cookieconsent-cookie-policy-link btn-primary">En savoir plus </a>':'') +
 							'<a class="cookieconsent-toggle-magic-button cookieconsent-magic-button-related" href="#"><span class="ui-icon ui-icon-alert"></span></a>' +
 						'</div>'
 					);
