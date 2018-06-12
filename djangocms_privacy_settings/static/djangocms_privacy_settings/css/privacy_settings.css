@@ -9,10 +9,7 @@
     background: #fff;
     border: 1px solid #ccc;
 }
-.cookieconsent-dialog-content .btn{
-    padding:0;
-    background-color:#006cb7;
-}
+
 #edit-cookieconsent-settings{
     cursor:pointer;
 }
@@ -20,18 +17,26 @@
     width: 32px;
     height: 32px;
     overflow: hidden;
-    background: url(../img/cd-icon-close.svg) no-repeat center center;
+    background: url(../img/cd-icon-close.png) no-repeat center center;
     text-indent: 100%;
     white-space: nowrap;
     z-index: 3;
     color:#fff;
     opacity: 1;
     transition: all 0.5s;
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    background-color:#4caf50 !important;
 }
 .ui-widget-content{
     min-height:80px;
 }
-
+.cookieconsent-dialog-content button{
+    padding:0;
+    border:0;
+}
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
     /* border: 1px solid #ffffff; */
     background: #f5f5f5 !important;
@@ -39,17 +44,17 @@
     margin: 15px 0px 5px;
 }
 .cookieconsent-level-changer a.activated{
-    border-color:#006cb7 !important;
+    border-color:#4caf50 !important;
 }
 .cookieconsent-level-changer a.activated span.cookieconsent-level-button-title {
-    background-color: #006cb7 !important;
+    background-color: #4caf50 !important;
 }
 .cookieconsent-level-changer a.activated span.cookieconsent-level-button-icon div.activated {
-    background-color: #006cb7 !important;
+    background-color: #4caf50 !important;
 }
 .ui-widget-header{
     background:#f5f5f5 !important;
-    color:#006cb7 !important;
+    color:#4caf50 !important;
     border-bottom:1px solid #fff !important;
     border-left:none !important;
     border-top:none !important;
@@ -64,13 +69,17 @@
 .ui-widget-overlay{
     background:rgba(0,0,0,0.7) !important;
 }
-.red{
+.cookieconsent-dialog-content .red{
     color:red !important;
 }
-.green{
+.cookieconsent-dialog-content .green{
     color:green !important;
 }
 .cookieconsent-edit-settings .cookieconsent-cookie-policy-link{
     display:table;
     margin:10px auto;
+}
+.cookieconsent-dialog-content{
+    width: auto !important;
+    max-width:700px;
 }
