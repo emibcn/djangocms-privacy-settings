@@ -214,7 +214,7 @@ $.extend({
 						'<div class="ui-corner-all cookieconsent-permission-panel-allowed"><div class="ui-corner-top ui-widget-header cookieconsent-permission-panel-title green"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Cookies activés :</div><ul class="ui-widget ui-widget-content ui-corner-bottom" /></div>' +
 					'</div>' +
 				'</div>' +
-				(config.cookie_policy_url.length > 0?'<a href="'+config.cookie_policy_url+'" class="cookieconsent-cookie-policy-link btn-primary text-center">En savoir plus</a>':'') +
+				(config.cookie_policy_url.length > 0?'<a href="'+config.cookie_policy_url+'" class="cookieconsent-cookie-policy-link btn-primary btn text-center">En savoir plus</a>':'') +
 			'</div>'
 		);
 		var close_settings_dialog = make_button('Close', 'ui-icon-closethick').addClass('cookieconsent-dialog-close');
@@ -281,7 +281,7 @@ $.extend({
 
 		// ui elements
 		function make_button(text, icon_class){
-			var button = $('<button class="btn ui-corner-all">'+(icon_class?'<span class="close" />':'')+'</button>');
+			var button = $('<button class="ui-corner-all">'+(icon_class?'<span class="close" />':'')+'</button>');
 			if(icon_class){
 				button.addClass('ui-button-text-icon-primary');
 			}else{
@@ -350,7 +350,7 @@ $.extend({
 						'<div class="ui-widget ui-corner-top cookieconsent-popup">' +
 							(typeof(config.cookie_notice) == 'string' ? config.cookie_notice : config.cookie_notice.html()) +
 							'<div class="cookieconsent-button-wrap" />' +
-							(config.cookie_policy_url.length > 0?'<a href="'+config.cookie_policy_url+'" class="cookieconsent-cookie-policy-link btn-primary">En savoir plus </a>':'') +
+							(config.cookie_policy_url.length > 0?'<a href="'+config.cookie_policy_url+'" class="cookieconsent-cookie-policy-link btn-primary btn">En savoir plus </a>':'') +
 							'<a class="cookieconsent-toggle-magic-button cookieconsent-magic-button-related" href="#"><span class="ui-icon ui-icon-alert"></span></a>' +
 						'</div>'
 					);
