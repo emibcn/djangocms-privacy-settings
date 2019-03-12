@@ -29,7 +29,7 @@
 
 <!--<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
 
-{% if request.LANGUAGE_CODE=='fr' %}
+{% if request.LANGUAGE_CODE == 'fr' %}
 <script type="text/javascript" src="{% static 'djangocms_privacy_settings/js/fr/cookie-consent-custom.js' %}"></script>
 {% else %}
 <script type="text/javascript" src="{% static 'djangocms_privacy_settings/js/en/cookie-consent-custom.js' %}"></script>
